@@ -89,6 +89,36 @@ class App extends Component {
 
     this.setState({
       workexperienceArr: [...newWorkexArr],
+    });
+  }
+
+  addNewEducation(){
+    let newEducation = [...this.state.educationArr, {
+      coursename: "",
+      university: "",
+      startdate: "",
+      enddate: "",
+      description: "",  
+    }];
+    this.setState({
+      educationArr: [...newEducation]
+    })
+  }
+
+  updateEducation(index, name, value){
+    let newEducation = [...this.state.educationArr];
+    newEducation[index][name] = value;
+
+    this.setState({
+      educationArr: [...newEducation]
+    });
+  }
+
+  deleteEducation(index){
+    let newEducation = this.state.educationArr.filter((value, i) => i != index );
+
+    this.setState({
+      educationArr: [...newEducation],
     })
   }
 
@@ -98,10 +128,12 @@ class App extends Component {
       <div className="App">
       <div id="content">
         <CVBuilder basicDetails={this.state.basic} updateBasicDetails={this.updateBasicDetail} 
-        workexperienceArr={this.state.workexperienceArr} updateWorkExperience={this.updateWorkExperience} 
-        deleteWorkExperience={this.deleteWorkExperience} addNewWorkExperience={this.addNewWorkExperience} 
-        addNewEducation={this.addNewEducation} updateEducation={this.updateEducation} deleteEducation={this.deleteEducation} />
-        <CVDisplay basicDetails={this.state.basic} workexperienceArr={this.state.workexperienceArr} />
+        workexperienceArr={this.state.workexperienceArr} educationArr={this.state.educationArr} 
+        updateWorkExperience={this.updateWorkExperience} deleteWorkExperience={this.deleteWorkExperience} addNewWorkExperience={this.addNewWorkExperience} 
+        addNewEducation={this.addNewEducation} updateEducation={this.updateEducation} deleteEducation={this.deleteEducation} 
+        />
+        
+        <CVDisplay basicDetails={this.state.basic} workexperienceArr={this.state.workexperienceArr} educationArr={this.state.educationArr} />
       </div>
     </div>
   );

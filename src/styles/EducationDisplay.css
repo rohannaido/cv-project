@@ -1,0 +1,20 @@
+.education-div{
+    margin: 1rem 0;
+}
+
+.education-heading-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.education-heading-div > h3{
+    margin: 0;
+}
+
+.university-details{
+    margin: 0;
+}
+
+.education-description{
+    margin: 0;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../styles/CVDisplay.css'
+import EducationDisplay from "./EducationDisplay";
 import WorkExperienceDisplay from "./WorkExperienceDisplay";
 
 
@@ -12,6 +13,7 @@ class CVDisplay extends Component {
 
         const {name, title, phonenumber, email, address, description} = this.props.basicDetails;
         const workexperienceArr= this.props.workexperienceArr;
+        const educationArr = this.props.educationArr;
 
         return(
             <div className="cv-display-div">
@@ -36,6 +38,10 @@ class CVDisplay extends Component {
                     <div className="work-experience-section-div">
                         <h2>Work Experience</h2>
                         {workexperienceArr.map((workex, index) => <WorkExperienceDisplay data={workex} index={index} /> )}
+                    </div>
+                    <div className="educatoin-section-div">
+                        <h2>Education</h2>
+                        {educationArr.map((edu, index) => <EducationDisplay data={edu} index={index} />)}
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import '../styles/CVBuilder.css'
 import WordExperienceInput from "./WorkExperienceInput";
+import EducationInput from "./EducationInput";
 
 class CVBuilder extends Component{
     constructor(props){
@@ -14,8 +15,6 @@ class CVBuilder extends Component{
     }
 
     render(){
-
-        // const { basicDetail, updateBasicDetails } = this.props;
 
         return(
             <div className="cv-inputs-div">
@@ -34,8 +33,8 @@ class CVBuilder extends Component{
                     <button className="add-workex-btn" type="button" onClick={this.props.addNewWorkExperience}>Add</button>
 
                     <h2 className="cv-builder-section-heading">Education</h2>
-                    {/* {this.props.educationArr.map((workex, index) => <EducationInput data={workex} index={index} updateWorkExperience={this.props.updateWorkExperience} deleteWorkExperience={this.props.deleteWorkExperience}/> )}
-                    <button className="add-workex-btn" type="button" onClick={this.props.addNewWorkExperience}>Add</button> */}
+                    {this.props.educationArr.map((workex, index) => <EducationInput data={workex} index={index} updateEducation={this.props.updateEducation} deleteEducation={this.props.deleteEducation}/> )}
+                    <button className="add-workex-btn" type="button" onClick={this.props.addNewEducation}>Add</button>
 
                 </form>
             </div>

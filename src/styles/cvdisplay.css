@@ -1,0 +1,24 @@
+.cv-display-div .heading{
+    margin: 0.5rem;
+}
+
+.cv-content-div{
+    padding: 2rem;
+}
+
+.cv-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personal-details-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content-border{
+    background-color: teal;
+    height: 0.5rem;
+    margin: 1rem 0;
+}

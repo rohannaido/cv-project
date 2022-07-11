@@ -1,0 +1,19 @@
+.cv-inputs-div h1{
+    margin: 0.5rem;
+}
+
+.cv-inputs-form{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 1rem 1.5rem;
+}
+
+.cv-inputs-form input, .cv-inputs-form textarea{
+    padding: 0.4rem;
+}
+
+.cv-inputs-form textarea{
+    resize: none;
+}

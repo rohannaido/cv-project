@@ -1,0 +1,12 @@
+.workexperience-input-div{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.workexperience-input-div .delete-btn{
+    padding: 0.5rem;
+    width: 5rem;
+    margin: 0.25rem 0;
+    color: brown;
+}

@@ -16,18 +16,40 @@ class App extends Component {
         address: "Hyderabad, Telangana",
         description: "asdf, this is a basic example descripton for the cv project thatj is being builtThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to ",
       },
-      // workexperience: {
-      //   companyname: "Dell",
-      //   position: "Software Dev",
-      //   startdate: "2019",
-      //   enddate: "2021",
-      //   description: " this is a basic example descripton for the cv project thatj is being",
-      // },
-      // workexperienceArr: [this.workexperience],
+      workexperienceArr: [
+        {
+          companyname: "Dell",
+          position: "Software Dev",
+          startdate: "2019",
+          enddate: "2021",
+          description: " this is a basic example descripton for the cv project thatj is being",
+        }, {
+          companyname: "Apple",
+          position: "Web Dev",
+          startdate: "2017",
+          enddate: "2019",
+          description: " MAC BOOK this is a basic example descripton for the cv project thatj is being",
+        }
+      ],
+      educationArr: [
+        {
+          coursename: "Odin",
+          university: "Odin Project",
+          startdate: "2022",
+          enddate: "Present",
+          description: "Best Full Stack Free Course",  
+        }
+      ]
     }
 
     this.updateBasicDetail = this.updateBasicDetail.bind(this);
+    this.addNewWorkExperience = this.addNewWorkExperience.bind(this);
+    this.updateWorkExperience = this.updateWorkExperience.bind(this);
+    this.deleteWorkExperience = this.deleteWorkExperience.bind(this);
 
+    this.addNewEducation = this.addNewEducation.bind(this);
+    this.updateEducation = this.updateEducation.bind(this);
+    this.deleteEducation = this.deleteEducation.bind(this);
   }
   
   updateBasicDetail(name, value) {
@@ -39,14 +61,47 @@ class App extends Component {
     });
   }
 
+  addNewWorkExperience(){
+    let newWorkexArr = [...this.state.workexperienceArr, {
+      companyname: "",
+      position: "",
+      startdate: "",
+      enddate: "",
+      description: "",
+    }];
+
+    this.setState({
+      workexperienceArr: [...newWorkexArr],
+    });
+  }
+
+  updateWorkExperience(index, name, value){
+    let newWorkexArr = [...this.state.workexperienceArr];
+    newWorkexArr[index][name] = value;
+
+    this.setState({
+      workexperienceArr: [...newWorkexArr],
+    });
+  }
+
+  deleteWorkExperience(index){
+    let newWorkexArr = this.state.workexperienceArr.filter((value, i) => i != index );
+
+    this.setState({
+      workexperienceArr: [...newWorkexArr],
+    })
+  }
+
   render() {
 
     return (
       <div className="App">
       <div id="content">
-        <CVBuilder basicDetails={this.state.basic} updateBasicDetails={this.updateBasicDetail} />
-        {/* workexperience={this.state.workexperience} workexperienceArr={this.state.workexperienceArr} /> */}
-        <CVDisplay basicDetails={this.state.basic} />
+        <CVBuilder basicDetails={this.state.basic} updateBasicDetails={this.updateBasicDetail} 
+        workexperienceArr={this.state.workexperienceArr} updateWorkExperience={this.updateWorkExperience} 
+        deleteWorkExperience={this.deleteWorkExperience} addNewWorkExperience={this.addNewWorkExperience} 
+        addNewEducation={this.addNewEducation} updateEducation={this.updateEducation} deleteEducation={this.deleteEducation} />
+        <CVDisplay basicDetails={this.state.basic} workexperienceArr={this.state.workexperienceArr} />
       </div>
     </div>
   );

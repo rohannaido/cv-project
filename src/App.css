@@ -12,13 +12,13 @@ div#content{
 }
 
 .cv-inputs-div{
-  height: 100vh;
+  /* height: 100vh; */
   background-color: aliceblue;
   width: 50%;
 }
 
 .cv-display-div{
-  height: 100vh;
+  /* height: 100vh; */
   background-color: antiquewhite;
   width: 50%;
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import '../styles/cvbuilder.css'
+import '../styles/CVBuilder.css'
+import WordExperienceInput from "./WorkExperienceInput";
+
 class CVBuilder extends Component{
     constructor(props){
         super(props);
@@ -13,7 +15,7 @@ class CVBuilder extends Component{
 
     render(){
 
-        const { basicDetail, updateBasicDetails } = this.props;
+        // const { basicDetail, updateBasicDetails } = this.props;
 
         return(
             <div className="cv-inputs-div">
@@ -28,9 +30,13 @@ class CVBuilder extends Component{
                     <textarea name="description" id="" rows="5" placeholder="Description" onChange={this.handleInputChange} value={this.props.basicDetails.description}></textarea>
 
                     <h2 className="cv-builder-section-heading">Work Experience</h2>
-                    
+                    {this.props.workexperienceArr.map((workex, index) => <WordExperienceInput data={workex} index={index} updateWorkExperience={this.props.updateWorkExperience} deleteWorkExperience={this.props.deleteWorkExperience}/> )}
+                    <button className="add-workex-btn" type="button" onClick={this.props.addNewWorkExperience}>Add</button>
 
                     <h2 className="cv-builder-section-heading">Education</h2>
+                    {/* {this.props.educationArr.map((workex, index) => <EducationInput data={workex} index={index} updateWorkExperience={this.props.updateWorkExperience} deleteWorkExperience={this.props.deleteWorkExperience}/> )}
+                    <button className="add-workex-btn" type="button" onClick={this.props.addNewWorkExperience}>Add</button> */}
+
                 </form>
             </div>
         )

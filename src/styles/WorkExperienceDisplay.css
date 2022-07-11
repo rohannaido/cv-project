@@ -1,0 +1,20 @@
+.workexperience-div{
+    margin: 1rem 0;
+}
+
+.workexperience-heading-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.workexperience-heading-div > h3{
+    margin: 0;
+}
+
+.workex-company-details{
+    margin: 0;
+}
+
+.workexperience-description{
+    margin: 0;
+}

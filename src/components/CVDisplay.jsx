@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../styles/CVDisplay.css'
-import WordExperienceDisplay from "./WordExperienceDisplay";
+import WorkExperienceDisplay from "./WorkExperienceDisplay";
 
 
 class CVDisplay extends Component {
@@ -35,7 +35,7 @@ class CVDisplay extends Component {
                     </div>
                     <div className="work-experience-section-div">
                         <h2>Work Experience</h2>
-                        {workexperienceArr.map((workex, index) => <WordExperienceDisplay data={workex} index={index} /> )}
+                        {workexperienceArr.map((workex, index) => <WorkExperienceDisplay data={workex} index={index} /> )}
                     </div>
                 </div>
             </div>

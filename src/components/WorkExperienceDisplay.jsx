@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../styles/WorkExperienceDisplay.css';
 
-class WordExperienceDisplay extends Component{
+class WorkExperienceDisplay extends Component{
     constructor(props){
         super(props)
     }
@@ -22,4 +22,4 @@ class WordExperienceDisplay extends Component{
     }
 }
 
-export default WordExperienceDisplay;
+export default WorkExperienceDisplay;

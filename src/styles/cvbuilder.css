@@ -2,6 +2,10 @@
     margin: 0.5rem;
 }
 
+.cv-builder-section-heading{
+    margin: 0;
+}
+
 .cv-inputs-form{
     border: 1px solid black;
     display: flex;

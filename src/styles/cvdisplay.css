@@ -17,8 +17,24 @@
     flex-direction: column;
 }
 
+.name-title-div h1{
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+p.title{
+    margin: 0.2rem 0;
+    font-size: 1.25rem;
+    color: gray;
+
+}
+
 .header-content-border{
     background-color: teal;
     height: 0.5rem;
+    margin: 1rem 0;
+}
+
+.description-text-div{
     margin: 1rem 0;
 }
